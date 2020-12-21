@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Section 3: Javascript Language Basics</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.anychart.com/releases/8.9.0/js/anychart-base.min.js"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    
+      <div id="welcomeMsg">
+        <h1>Diet Daily Tracker with Macronutrient Calculator </h2>
+      
+        <ul id="newOldUser">
+            <li><Button onclick="showSignInDiv()">Sign In</Button></li>          
+            <li><Button>Sign Up</Button></li>
+          </ul></button>
+
+          <div id="signDivOuter">
+          <div id="signInDiv">
+            <h3 class="signInElem">Sign In</h3>
+            <form action="signIn">
+              <label class="signInElem" for="uName">username or email:</label>
+              <input class="signInElem" type="text"  label="username or email">
+              <label class="signInElem" for="uName">Password:</label>
+              <input class="signInElem" type="password"  label="username or email">
+              <button class="signInElem" onclick="signInButtonClicked()"> Sign In</button>
+            </form>
+          </div>
+        </div>
+    
+      </div>
+
+      
+    
+
+      
+      <div id="appBoxOuter">
+        <div id="foodSelector">
+          <label for="food">Food Serving Size</label> 
+          <select name="food" id="foodSelect" required>
+          <option class="foodOption" value="Sockey Salmon">salmon</option>
+          <option class="foodOption" value="Green Lentils">lentils</option>
+          <option class="foodOption" value="white rice">rice</option>
+          <option class="foodOption" value="red quinoa">quinoa</option>
+          <option class="foodOption" value="mcChicken">mcChicken</option>
+          <option class="foodOption" value="ground beef 93%">ground beef 93%</option>
+          <option class="foodOption" value="bacon grease">bacon grease</option>
+          <option class="foodOption" value="sweet potato">sweet potato</option>
+          </select>
+          <button type="submit" onclick="foodAdd()">Add Food To Eaten</button>
+        </div>
+        
+        <div class="appBoxInner">
+          <label for="displayChart">Display Chart</label>
+          <input class="chartChoice" type="radio" name="displayChart" value="1" checked="checked" onclick="chartStatus(), showChart()">
+          <label for="yes">Yes</label>
+          <input class="chartChoice" type="radio" name="displayChart" value="0" onclick=" showChart()">
+          <label for="no">no</label>
+
+          <button onclick="drawChart(), avgCaloriesF(), avgFatF(), avgCarbsF(), avgProF()">refresh with new foods</button>
+          <button onclick="removeLastFood()">Remove Last Food</button>
+          <button onclick="clearFoods()">Clear the list</button>
+
+          <p id="disFat"> HI</p>
+          <p id="disCarbs"> HR</p>
+          <p id="disPro"> HR</p>
+<!--
+          <div class="highFatCarbs"style="display:block">high fat carbs</div>
+          
+          <div class="highFatPro"style="display:block">high fat pro</div>
+          
+          <div class="highCarbsPro"style="display:block">high carbs pro</div>
+        
+-->
+</div>
+      </div>
+      <table id="foodEatenTable">
+        <tr class="tableHr">
+          <td class="tableLb">Food</td>
+          <td class="tableLb">Calories</td>
+          <td class="tableLb">Fat</td>
+          <td class="tableLb">Carbs</td>
+          <td class="tableLb">Protein</td>
+        </tr>
+        <tr class="foodRow">
+          <td class="foodDataName">dfasd</td>
+          <td class="foodDataCal">asdfasd</td>
+          <td class="foodDataFat">asdfas</td>
+          <td class="foodDataCarbs">asdfa</td>
+          <td class="foodDataPro">asdfasdf</td>
+        </tr>
+      </table>
+
+<div class="theChart" id="piechart" style="width: 500px;
+    height: 500px;" ></div>
+   
+      
+    
+  </body>
+</html>

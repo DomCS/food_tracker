@@ -1,0 +1,119 @@
+label {
+}
+div {
+  position: relative;
+}
+
+button {
+  max-width: 150px;
+  width: 150px;
+  margin: 2px;
+  background-color: #9daaf2;
+  color: white;
+  display: block;
+}
+
+#welcomeMsg {
+  color: #9daaf2;
+  position: relative;
+  padding-left: 10%;
+  padding-bottom: 3%;
+  width: 100%;
+  background-color: #1a2238;
+  margin-bottom: 10px;
+}
+
+#signInDiv {
+  display: none;
+}
+
+.signInElem {
+  width: 20%;
+}
+
+.signInElem,
+label {
+  width: 20%;
+  display: block;
+}
+
+.signInElem,
+h3 {
+  width: 20%;
+  margin: 0;
+}
+
+#appBoxOuter {
+  border: solid 5px black;
+  padding: 10px;
+  background-color: #1a2238;
+  padding: 10px;
+  color: white;
+  position: relative;
+  display: inline-block;
+}
+
+.appBoxInner {
+  padding: 10px;
+  width: 200px;
+  color: #f4db7d;
+}
+
+#foodSelector {
+  padding: 20px;
+}
+
+.chartChoice {
+  width: 20px;
+}
+
+.theChart {
+  left: 450px;
+  bottom: 400px;
+  padding: 0;
+  margin: 0;
+  display: inline;
+}
+
+.highFat {
+  background-color: rgb(220, 57, 18);
+}
+.highFatCarbs {
+  background-color: rgb(237.5, 105, 9);
+}
+
+.highFatPro {
+  background-color: rgb(118, 103.5, 21);
+}
+
+.highCarbs {
+  background-color: rgb(255, 153, 0);
+}
+.highCarbsPro {
+  background-color: rgb(135.5, 151.5, 12);
+}
+
+.highProtein {
+  background-color: rgb(16, 150, 24);
+}
+
+.foodOption {
+}
+
+/*CSS for all food table properties */
+#foodEatenTable {
+  width: 400px;
+  text-align: center;
+  position: relative;
+  left: 25%;
+}
+
+.tableHr {
+  background-color: dimgrey;
+  width: 1000px;
+}
+
+.tableLb {
+  width: 50px;
+}
+/* Css For all food table properties ^^^*/
