@@ -345,13 +345,13 @@ function eatReadFood() {
 ///////////////////////////////////////////////////////////////////////////
 
 function chartStatus() {
-  var radios = document.getElementsByName("displayChart");
+  var option = document.getElementsByName("displayChart");
   var setChartDisplay;
-  for (var i = 0, length = radios.length; i < length; i++) {
-    if (radios[i].checked) {
+  for (var i = 0, length = option.length; i < length; i++) {
+    if (option[i].checked) {
       // do whatever you want with the checked radio
       //console.log(radios[i].value);
-      setChartDisplay = radios[i].value;
+      setChartDisplay = option[i].value;
       console.log(setChartDisplay);
       if (setChartDisplay == 1) {
         displayChart = true;
