@@ -9,6 +9,7 @@
       type="text/javascript"
       src="https://www.gstatic.com/charts/loader.js"
     ></script>
+    <script type="text/javascript"></script>
     <script src="script.js" defer></script>
   </head>
   <body>
@@ -73,15 +74,17 @@
         <button onclick="removeLastFood()">Remove Last Food</button>
         <button onclick="clearFoods()">Clear the list</button>
       </div>
-
-      <div
-        class="theChart"
-        id="piechart"
-        style="width: 500px; height: 500px"
-      ></div>
     </section>
 
     <aside>
+      <div
+        id="chart_1"
+        style="width: 550px; height: 400px; margin: 0 auto"
+      ></div>
+      <div
+        id="chart_2"
+        style="width: 550px; height: 400px; margin: 0 auto"
+      ></div>
       <table>
         <thead></thead>
       </table>

@@ -76,6 +76,13 @@ nav {
   top: 10px;
 }
 
+#chart_1,
+#chart_2 {
+  position: relative;
+  left: 145px;
+  bottom: 200px;
+}
+
 .highFat {
   background-color: rgb(220, 57, 18);
 }

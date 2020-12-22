@@ -1,4 +1,4 @@
-google.charts.load("current", { packages: ["corechart"] });
+google.charts.load("current", { packages: ["bar"] });
 google.charts.setOnLoadCallback(drawChart);
 
 /*
@@ -411,6 +411,45 @@ function signInButtonClicked() {
   document.getElementById("signInDiv").style.display = "none";
 }
 
+function drawChart() {
+  // Define the first chart to be drawn.
+  var data = google.visualization.arrayToDataTable([
+    ["Macro Type", "Consumed", "Goal", { role: "annotation" }],
+    ["Carbs (g)", getTotalCarbs(), 237.5, "Carbs"],
+    ["Fat (g)", getTotalFat(), 70, "Fat"],
+    ["Protein (g)", getTotalPro(), 155, "Protein"],
+  ]);
+  //options for first chart
+  var options = {
+    chart: {
+      title: "Nutrients to Daily Goal",
+      subtitle: "Carbohydrates, fat, and protein",
+    },
+    bars: "horizontal",
+  };
+
+  //Define the 2nd chart to be drawn
+  var data2 = google.visualization.arrayToDataTable([
+    ["Macro", "Consumed", "Goal", { role: "annotation" }],
+    ["Calories", getTotalCals(), 2200, "calories"],
+  ]);
+  //options for 2nd chart
+  var options2 = {
+    chart: {
+      title: "Calories to Daily Goal",
+      subtitle: "Calories",
+    },
+    bars: "horizontal",
+  };
+
+  // Instantiate and draw the chart.
+  var chart = new google.charts.Bar(document.getElementById("chart_1"));
+  chart.draw(data, options);
+  var chart2 = new google.charts.Bar(document.getElementById("chart_2"));
+  chart2.draw(data2, options2);
+}
+
+/*
 //code to populate document with a piechart
 function drawChart() {
   var data = google.visualization.arrayToDataTable([
@@ -433,6 +472,7 @@ function drawChart() {
 
   chart.draw(data, options);
 }
+*/
 
 //cycles through the html <select>'s <option>
 //for each option that db has a matching food item for
@@ -496,7 +536,7 @@ function avgFatFunc() {
   for (i = 0; i < foodsLib.length; i++) {
     var currentFood = foodsLib[i];
     avgFat += currentFood.fat / foodsLib.length;
-    document.getElementById("disFat").innerHTML = " avg fat:" + avgFat;
+    //document.getElementById("disFat").innerHTML = " avg fat:" + avgFat;
   }
   return avgFat;
 }
@@ -507,7 +547,7 @@ function avgCarbsFunc() {
   for (i = 0; i < foodsLib.length; i++) {
     var currentFood = foodsLib[i];
     avgCarbs += currentFood.carbs / foodsLib.length;
-    document.getElementById("disCarbs").innerHTML = " avg carbs:" + avgCarbs;
+    // document.getElementById("disCarbs").innerHTML = " avg carbs:" + avgCarbs;
   }
   return avgCarbs;
 }
@@ -518,7 +558,7 @@ function avgProFunc() {
   for (i = 0; i < foodsLib.length; i++) {
     var currentFood = foodsLib[i];
     avgPro += currentFood.protein / foodsLib.length;
-    document.getElementById("disPro").innerHTML = " avg protein:" + avgPro;
+    //document.getElementById("disPro").innerHTML = " avg protein:" + avgPro;
   }
   return avgPro;
 }
