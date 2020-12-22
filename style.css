@@ -1,4 +1,17 @@
+* {
+  margin: 0;
+}
+
 label {
+}
+
+header {
+  margin: 0 auto;
+  text-align: center;
+  background-color: #1a2238;
+  color: white;
+  height: 120px;
+  padding-top: 10px;
 }
 div {
   position: relative;
@@ -11,16 +24,6 @@ button {
   background-color: #9daaf2;
   color: white;
   display: block;
-}
-
-#welcomeMsg {
-  color: #9daaf2;
-  position: relative;
-  padding-left: 10%;
-  padding-bottom: 3%;
-  width: 100%;
-  background-color: #1a2238;
-  margin-bottom: 10px;
 }
 
 #signInDiv {
@@ -63,16 +66,14 @@ h3 {
   padding: 20px;
 }
 
-.chartChoice {
-  width: 20px;
-}
-
 .theChart {
-  left: 450px;
+  position: relative;
+  left: 275px;
   bottom: 400px;
   padding: 0;
   margin: 0;
-  display: inline;
+  /* display: inline;*/
+  border: #1a2238 3px solid;
 }
 
 .highFat {
@@ -96,24 +97,3 @@ h3 {
 .highProtein {
   background-color: rgb(16, 150, 24);
 }
-
-.foodOption {
-}
-
-/*CSS for all food table properties */
-#foodEatenTable {
-  width: 400px;
-  text-align: center;
-  position: relative;
-  left: 25%;
-}
-
-.tableHr {
-  background-color: dimgrey;
-  width: 1000px;
-}
-
-.tableLb {
-  width: 50px;
-}
-/* Css For all food table properties ^^^*/
