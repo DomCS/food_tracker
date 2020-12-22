@@ -1,12 +1,11 @@
 * {
-  margin: 0;
-}
-
-label {
+  margin: 0 auto;
+  padding: 0;
 }
 
 body {
   background-image: linear-gradient(#1a2238, white);
+  margin: 0 auto;
 }
 
 header {
@@ -14,12 +13,9 @@ header {
   text-align: center;
   background-color: #1a2238;
   color: white;
-  height: 120px;
+  height: 100px;
   padding-top: 20px;
   border-bottom: grey 2px solid;
-}
-div {
-  position: relative;
 }
 
 button {
@@ -28,20 +24,6 @@ button {
   margin: 2px;
   background-color: #9daaf2;
   color: white;
-  display: block;
-}
-
-#signInDiv {
-  display: none;
-}
-
-.signInElem {
-  width: 20%;
-}
-
-.signInElem,
-label {
-  width: 20%;
   display: block;
 }
 
@@ -56,30 +38,26 @@ h3 {
   background-color: #1a2238;
   padding: 10px;
   color: white;
-  position: relative;
-  display: inline-block;
-  border-right: 2px solid grey;
-  border-bottom: 2px solid grey;
-}
 
-.appBoxInner {
-  padding: 10px;
-  width: 200px;
-  color: #f4db7d;
+  display: inline-block;
+  bottom: 195px;
 }
 
 #foodSelector {
   padding: 20px;
 }
 
+#foodSelector > * {
+  margin: 5px 0;
+}
+
 .theChart {
-  position: relative;
-  left: 275px;
-  bottom: 400px;
   padding: 0;
   margin: 0;
   /* display: inline;*/
   border: #1a2238 3px solid;
+  width: 600px;
+  position: static;
 }
 
 .highFat {
@@ -109,4 +87,7 @@ footer {
   height: 50px;
   border-top: 3px solid grey;
   background-image: linear-gradient(white, black);
+  position: absolute;
+  bottom: 0;
+  width: 100%;
 }
