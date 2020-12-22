@@ -10,11 +10,14 @@ body {
 
 header {
   margin: 0 auto;
-  background-color: #1a2238;
   color: white;
   padding-top: 20px;
   padding-bottom: 0;
   border-bottom: grey 2px solid;
+}
+
+.blueB {
+  background-color: #1a2238;
 }
 
 .title {
@@ -43,6 +46,10 @@ nav {
   color: gold;
 }
 
+.centerText {
+  text-align: center;
+}
+
 #appBoxOuter {
   padding: 10px;
   background-color: #1a2238;
@@ -50,6 +57,7 @@ nav {
   color: white;
   display: inline-block;
   bottom: 195px;
+  width: 100%;
 }
 
 #foodSelector {
@@ -66,7 +74,7 @@ nav {
   margin: 2px auto;
   background-color: #9daaf2;
   color: white;
-  display: block;
+  display: inline-block;
 }
 
 .theChart {
@@ -78,9 +86,27 @@ nav {
 
 #chart_1,
 #chart_2 {
-  position: relative;
+  display: inline-block;
   left: 145px;
   bottom: 200px;
+}
+
+.bigButton {
+  padding: 5px;
+}
+
+.inline {
+  display: inline-block;
+  width: fill;
+}
+
+.asideTop {
+  position: relative;
+  bottom: 490px;
+}
+
+.ltr {
+  text-align: left;
 }
 
 .highFat {

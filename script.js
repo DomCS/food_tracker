@@ -423,14 +423,14 @@ function drawChart() {
   var options = {
     chart: {
       title: "Nutrients to Daily Goal",
-      subtitle: "Carbohydrates, fat, and protein",
+      subtitle: "Carbohydrates, Fat and Protein Measured in grams",
     },
     bars: "horizontal",
   };
 
   //Define the 2nd chart to be drawn
   var data2 = google.visualization.arrayToDataTable([
-    ["Macro", "Consumed", "Goal", { role: "annotation" }],
+    ["Calories", "Consumed", "Goal", { role: "annotation" }],
     ["Calories", getTotalCals(), 2200, "calories"],
   ]);
   //options for 2nd chart

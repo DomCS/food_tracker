@@ -13,7 +13,7 @@
     <script src="script.js" defer></script>
   </head>
   <body>
-    <header>
+    <header class="blueB">
       <h1 class="title">Diet Daily Tracker with Macronutrient Calculator</h1>
       <nav>
         <nav-item>
@@ -45,8 +45,11 @@
           <option class="foodOption" value="bacon grease">bacon grease</option>
           <option class="foodOption" value="sweet potato">sweet potato</option>
         </select>
-        <button type="submit" onclick="foodAdd()">Add Food To Eaten</button>
-
+        <button class="bigButton" type="submit" onclick="foodAdd()">
+          Add Food To Eaten
+        </button>
+        <br />
+        <!--
         <label for="displayChart">Display Chart</label>
         <input
           class="chartChoice"
@@ -65,19 +68,19 @@
           onclick=" showChart()"
         />
         <label for="no">no</label>
-
+-->
         <button
           onclick="drawChart(), avgCaloriesF(), avgFatF(), avgCarbsF(), avgProF()"
         >
-          refresh with new foods
+          Count nutrient averages
         </button>
-        <button onclick="removeLastFood()">Remove Last Food</button>
-        <button onclick="clearFoods()">Clear the list</button>
+        <button class="bigButton" onclick="removeLastFood()">
+          Remove Last Food
+        </button>
+        <button class="bigButton" onclick="clearFoods()">Clear the list</button>
       </div>
-    </section>
-
-    <aside>
       <div
+        class="blueB"
         id="chart_1"
         style="width: 550px; height: 400px; margin: 0 auto"
       ></div>
@@ -85,10 +88,10 @@
         id="chart_2"
         style="width: 550px; height: 400px; margin: 0 auto"
       ></div>
-      <table>
-        <thead></thead>
-      </table>
-    </aside>
+      <aside class="inline asideTop blueB">
+        <h2>Food Suggestion:</h2>
+      </aside>
+    </section>
 
     <footer>&COPY; Copyright 2020, Sermon Technologies</footer>
   </body>
