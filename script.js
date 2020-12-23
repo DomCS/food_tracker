@@ -1,16 +1,7 @@
+// Load Charts and the bar package.
 google.charts.load("current", { packages: ["bar"] });
+// Draw the bar charts when charts is loaded.
 google.charts.setOnLoadCallback(drawChart);
-
-/*
-// Load Charts and the corechart package.
-google.charts.load("current", { packages: ["corechart"] });
-
-// Draw the pie chart for Sarah's pizza when Charts is loaded.
-google.charts.setOnLoadCallback(drawSarahChart);
-
-// Draw the pie chart for the Anthony's pizza when Charts is loaded.
-google.charts.setOnLoadCallback(drawAnthonyChart);
-*/
 
 var foodsLib = [];
 var enteredFoodsLib = [];
@@ -267,18 +258,6 @@ function avgEatenPro() {
   return avgPro;
 }
 
-/*
-function calTest(a) {
-  if (a.calorie < avgCalories()) {
-    console.log("this food has lower than average calories");
-  } else {
-    console.log("this food has higher than average calories");
-  }
-}
-*/
-
-//////////////////////////////////////////////////////////////
-
 //function accepts and saves into a variable the user's <select> <option>
 function getFoodEntered() {
   // reference to 'foodList' select list
@@ -286,51 +265,16 @@ function getFoodEntered() {
   var sel = document.getElementById("foodSelect");
   //save value from the html select into a variable
   var foodSearchKey = sel.value;
-  // display value property of select list (from selected option) (the string of html value attibute)
-  //console.log(foodSLibearchKey);
-
-  // reference to selected option written in html
-  //var selItemHtml = sel.options[sel.selectedIndex];
-
-  //console.log("clicked the add button");
-  //console.log(selItemHtml);
-  //enteredFoodsLib.unshift(this);
-  //console.log(enteredFoodsLib + " what the fuck");
   return foodSearchKey;
 }
 //function searches db's known foods for a match to users <select> <option>
 function matchFood() {
   for (i = 0; i < foodsLib.length; i++) {
     if (foodsLib[i].name == getFoodEntered()) {
-      console.log("testing " + foodsLib[i].name);
+      //console.log("testing " + foodsLib[i].name);
       //enteredFoodsLib.unshift(foodsLib[i]);
-      console.log(foodsLib[i].value + " testing as well");
+      //console.log(foodsLib[i].value + " testing as well");
       return foodsLib[i];
-      /*
-      //console log to test the accessing of proper variables and values
-      
-      console.log(
-        "Stats of the chosen food are: " +
-          "\n" +
-          "name: " +
-          foodsLib[i].name +
-          "\n" +
-          "serving size: " +
-          foodsLib[i].servingSize +
-          "\n" +
-          "calories: " +
-          foodsLib[i].calories +
-          "\n" +
-          "fat: " +
-          foodsLib[i].fat +
-          "\n" +
-          "carbs: " +
-          foodsLib[i].carbs +
-          "\n" +
-          "protein: " +
-          foodsLib[i].protein
-      );
-        */
     }
   }
 }
@@ -341,8 +285,6 @@ function eatReadFood() {
   enteredFoodsLib.unshift(matchFood());
   console.log(enteredFoodsLib);
 }
-
-///////////////////////////////////////////////////////////////////////////
 
 function chartStatus() {
   var option = document.getElementsByName("displayChart");
@@ -375,6 +317,8 @@ function foodAdd() {
   avgFatFunc();
   avgCarbsFunc();
   avgProFunc();
+  addTableRow();
+  return matchFood();
 }
 
 //code to toggle the display of the chart on or off
@@ -449,31 +393,6 @@ function drawChart() {
   chart2.draw(data2, options2);
 }
 
-/*
-//code to populate document with a piechart
-function drawChart() {
-  var data = google.visualization.arrayToDataTable([
-    ["Food", "percentage ate"],
-    ["Calories", getTotalCals()],
-    ["Fat", getTotalFat()],
-    ["Carbs", getTotalCarbs()],
-    ["Protein", getTotalPro()],
-  ]);
-
-  var options = {
-    title: "Macros Eaten Today",
-    chartArea: { left: "0px", top: "50px", width: "80%", height: "75%" },
-    is3D: "true",
-  };
-
-  var chart = new google.visualization.PieChart(
-    document.getElementById("piechart"),
-  );
-
-  chart.draw(data, options);
-}
-*/
-
 //cycles through the html <select>'s <option>
 //for each option that db has a matching food item for
 //the function appends html to reflect db's serving size for that food
@@ -531,6 +450,8 @@ function addServingSize() {
 
 //for each food item that has been eaten this function will return
 //the average amount of protein in (grams) among them
+//difference between other 'avg' functions above:this is the average nutrients
+//of the entire array of chooosable foods
 function avgFatFunc() {
   avgFat = 0;
   for (i = 0; i < foodsLib.length; i++) {
@@ -542,6 +463,8 @@ function avgFatFunc() {
 }
 //for each food item that has been eaten this function will return
 //the average amount of protein in (grams) among them
+//difference between other 'avg' functions above:this is the average nutrients
+//of the entire array of chooosable foods
 function avgCarbsFunc() {
   avgCarbs = 0;
   for (i = 0; i < foodsLib.length; i++) {
@@ -552,7 +475,9 @@ function avgCarbsFunc() {
   return avgCarbs;
 }
 //for each food item that has been eaten this function will return
-//the average amount of protein in (grams) among them
+//the average amount of protein in (grams) among
+//difference between other 'avg' functions above:this is the average nutrients
+//of the entire array of chooosable foods
 function avgProFunc() {
   avgPro = 0;
   for (i = 0; i < foodsLib.length; i++) {
@@ -563,104 +488,22 @@ function avgProFunc() {
   return avgPro;
 }
 
-//************************commented out slop********************
+/*
+let addTableRow = () => {
+  let tabBody = document.getElementsByTagName("tbody").item(0);
+  row = document.createElement("tr");
+  numOfRows = 0;
+  nameCell = document.createElement("td");
 
-/*****************************************
- * Will write this function to create slide over table of daily eaten foodsLib
- * ... plan is to extrapolate the data from a database to populate table contents
- * 
-initTable = function () {
-  for (i = 0; i < foodsLib.length; i++) {
-    var currentFood = foodsLib[i];
-
-    if (currentFood.eatenToday) {
-      var tr = document.createElement("TR"); // Create a <tr> node
-      tr.innerHTML = tr.setAttribute("id", "foodRow" + i); //give created <tr> an id
-      tr.setAttribute("class", "foodRow"); //give created <tr> a class
-      document.getElementById("foodEatenTable").appendChild(tr); // Append <tr> to <table> with id="foodEatenTable"
-
-      var tdFoodNameElement = document.createElement("TD"); // create a <td> node
-      tdFoodNameElement.innerHTML = tdFoodNameElement.setAttribute(
-        "id",
-        "foodDataName" + i
-      );
-      tdFoodNameElement.setAttribute("id", "foodDataName" + i); //give created TD element an id
-      tdFoodNameElement.setAttribute("class", "foodDataName"); //give created TD element a class
-      //document.getElementById("foodDataName" + i).appendChild(tdFoodNameElement); //Append <td> node to created <tr> element
-      // document.getElementById("foodDataName" + i).innerHTML(currentFood.name);
-      /*
-      var tdTextFoodName = document.createTextNode(toString(currentFood.name)); // Create a text node
-      tdTextFoodName.appendChild(tr);
-      var tdTextFoodCal = document.createTextNode(toString(currentFood.name)); // Create a text node
-      tdTextFoodCal.appendChild(tr);
-      var tdTextFoodFat = document.createTextNode(toString(currentFood.name)); // Create a text node
-      tdTextFoodFat.appendChild(tr);
-      var tdTextFoodCarbs = document.createTextNode(toString(currentFood.name)); // Create a text node
-      tdTextFoodCarbs.appendChild(tr);
-      var tdTextFoodPro = document.createTextNode(toString(currentFood.name)); // Create a text node
-      tdTextFoodPro.appendChild(tr);
-  
+  for (let i = 0; i < enteredFoodsLib.length; i++) {
+    if (enteredFoodsLib[i] && i <= numOfRows) {
+      numOfRows++;
+      nameText = document.createTextNode(enteredFoodsLib[i].name);
+      nameCell.appendChild(nameText);
+      row.appendChild(nameCell);
+      tabBody.appendChild(row);
+      nameText = "";
     }
   }
 };
-*/
-/*
-
-Having issues with this code
-//call this to test each food for being higher or lower
-//in macros than the average of all foodsLib
-function weighCalsAgainstAverage(arr, fn) {
-  var arrCals = [];
-  for (i = 0; i < arr.length; i++) {
-    if (fn(arr[i]) > avgCalories) {
-      arr[i].highCal = true;
-      arrCals.push(fn(arr[i]));
-    }
-  }
-  console.log("the arrRes from callback function is " + arrCals);
-  highCalorie.concat(arrCals);
-  console.log(highCalorie);
-  return arrCals;
-}
-*/
-
-/*
-Food.prototype.avgNutrients = function(){
-    avgCal =0;
-    avgFat = 0;
-    avgCar = 0;
-    avgPro = 0;
-    for(i = 0; i < foodsLib.length; i++){
-        var currentFood = foodsLib[i];
-        avgCal += currentFood.calories;
-        avgFat += currentFood.fat;
-        avgCar += currentFood.carbs;
-        avgPro += currentFood.protein;
-    }
-    var tAvgCalories = avgCal / foodsLib.length;
-    var tAvgFat = avgFat / foodsLib.length;
-    var tAvgCarbs = avgCar / foodsLib.length;
-    var tAvgProtein = avgPro / foodsLib.length;
-    console.log('Average calories is ' + tAvgCalories + '\n' +
-    'Average fat is ' + tAvgFat + '\n' +
-    'Average carbs is ' + tAvgCarbs + '\n' +
-    'Average protein is ' + tAvgProtein  );
-};
-
-
-/*
-//using callback function right here, avgCalories is a function with not brackets
-//because that would call that function immediately; we want it called in the function
-// for loop inside weighAgainstAverage
-weighCalsAgainstAverage(foodsLib, avgCalories);
-*/
-
-/*
-//variables for thought about functionality 
-//would weigh each food against an average to tell if it is high in any 
-//certain food attiributes
-var highCalorie = [];
-var highFat = [];
-var highCarbohydrates = [];
-var highProtein = [];
 */
