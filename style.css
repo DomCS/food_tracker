@@ -4,7 +4,10 @@
 }
 
 body {
-  background-image: linear-gradient(#1a2238, white);
+  background-image: linear-gradient(
+    to right,
+    rgba(197, 82, 82, 0.596) rgba(26, 34, 56, 1)
+  );
   margin: 0 auto;
 }
 
@@ -105,38 +108,90 @@ nav {
   bottom: 490px;
 }
 
-.ltr {
-  text-align: left;
-}
-
-.highFat {
-  background-color: rgb(220, 57, 18);
-}
-.highFatCarbs {
-  background-color: rgb(237.5, 105, 9);
-}
-
-.highFatPro {
-  background-color: rgb(118, 103.5, 21);
-}
-
-.highCarbs {
-  background-color: rgb(255, 153, 0);
-}
-.highCarbsPro {
-  background-color: rgb(135.5, 151.5, 12);
-}
-
-.highProtein {
-  background-color: rgb(16, 150, 24);
-}
-
 footer {
   text-align: center;
   height: 50px;
   border-top: 3px solid grey;
   background-image: linear-gradient(white, black);
-  position: absolute;
+  position: relative;
   bottom: 0;
   width: 100%;
+}
+
+.rightPad {
+  padding-right: 5px;
+  color: white;
+}
+.silver {
+  background-color: silver;
+  color: white;
+}
+.gold {
+  background-color: gold;
+  color: white;
+}
+.green {
+  background-color: green;
+  color: white;
+}
+
+.red {
+  background-color: red;
+  color: white;
+}
+
+.blue {
+  background-color: blue;
+
+  color: white;
+}
+#foodTable > * {
+  color: white;
+  text-align: center;
+}
+th {
+  color: white;
+  width: 100px;
+}
+
+.padded5 {
+  padding: 5px;
+}
+
+.padded20 {
+  padding: 20px;
+}
+
+.lineSpaced {
+  line-height: 1.6;
+}
+
+.specialSpan {
+  font-size: 1.4em;
+  text-transform: uppercase;
+  padding: 5px;
+  height: 20px;
+}
+
+.bar-icon {
+  height: 50px;
+  width: 50px;
+  display: inline-block;
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+.inlineBlock {
+  display: inline;
+}
+
+#chartingTitle {
+  position: relative;
+  bottom: 15px;
+  margin-left: 15px;
+}
+
+.instructions {
+  font-family: Helvetica, sans-serif;
 }

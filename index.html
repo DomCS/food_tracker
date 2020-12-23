@@ -2,6 +2,9 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta name="description" content="My first html website" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <title>Section 3: Javascript Language Basics</title>
     <link rel="stylesheet" href="style.css" />
     <script src="https://cdn.anychart.com/releases/8.9.0/js/anychart-base.min.js"></script>
@@ -9,12 +12,12 @@
       type="text/javascript"
       src="https://www.gstatic.com/charts/loader.js"
     ></script>
-    <script type="text/javascript"></script>
-    <script src="script.js" defer></script>
+
+    <script src="script.js" type="text/javascript" defer></script>
   </head>
   <body>
     <header class="blueB">
-      <h1 class="title">Diet Daily Tracker with Macronutrient Calculator</h1>
+      <h1 class="title">Diet Tracker with Macronutrient Calculator</h1>
       <nav>
         <nav-item>
           <a class="navItem" href="./resources.html">Resources</a>
@@ -30,47 +33,55 @@
       </nav>
     </header>
 
+    <section>
+      <article id="howTo" class="padded20 lineSpaced">
+        <p class="centerText">
+          This is your
+          <span class="gold specialSpan">
+            <em>daily diet tracker</em>
+          </span>
+        </p>
+        <br>
+        
+        <p class="centerText instructions">
+          <br />
+          <span class=>Set your diet goal for each category
+          </span>
+          <br />
+          You have a list of foods to choose from with their corresponding
+          serving sizes alongside each food
+          <br />
+          Once a food is selected the charts will update with the calories,
+          grams of fat, carbs and protein.
+        </p>
+      </article>
+    </section>
+
     <section id="appBoxOuter">
+   
       <div id="foodSelector">
-        <label for="food">Food Serving Size</label>
-        <select name="food" id="foodSelect" required>
+        <span class="bar-icon" style="background-color: white;"><img src="feather\bar-chart.svg" alt=""></span>
+        <h1 id="chartingTitle" class="inlineBlock">Food Charting</h1> <br>
+<hr>
+        <label for="food"><span>Select your food</span></label>
+        <select class="padded5" name="food" id="foodSelect" required>
           <option class="foodOption" value="Sockey Salmon">salmon</option>
-          <option class="foodOption" value="Green Lentils">lentils</option>
-          <option class="foodOption" value="white rice">rice</option>
-          <option class="foodOption" value="red quinoa">quinoa</option>
-          <option class="foodOption" value="mcChicken">mcChicken</option>
-          <option class="foodOption" value="ground beef 93%">
-            ground beef 93%
-          </option>
-          <option class="foodOption" value="bacon grease">bacon grease</option>
-          <option class="foodOption" value="sweet potato">sweet potato</option>
+            <option class="foodOption" value="Green Lentils">lentils</option>
+              <option class="foodOption" value="white rice">rice</option>
+                <option class="foodOption" value="red quinoa">quinoa</option>
+                  <option class="foodOption" value="mcChicken">mcChicken</option>
+                    <option class="foodOption" value="ground beef 93%">ground beef 93%</option>
+                      <option class="foodOption" value="bacon grease">bacon grease</option>
+                       <option class="foodOption" value="sweet potato">sweet potato</option>
         </select>
+
         <button class="bigButton" type="submit" onclick="foodAdd()">
           Add Food To Eaten
-        </button>
+        </button> 
         <br />
-        <!--
-        <label for="displayChart">Display Chart</label>
-        <input
-          class="chartChoice"
-          type="radio"
-          name="displayChart"
-          value="1"
-          checked="checked"
-          onclick="chartStatus(), showChart()"
-        />
-        <label for="yes">Yes</label>
-        <input
-          class="chartChoice"
-          type="radio"
-          name="displayChart"
-          value="0"
-          onclick=" showChart()"
-        />
-        <label for="no">no</label>
--->
+
         <button
-          onclick="drawChart(), avgCaloriesF(), avgFatF(), avgCarbsF(), avgProF()"
+          onclick="drawChart(), avgCaloriesF(), avgFatF(), avgCarbsF(), avgProF(), addTableRow()"
         >
           Count nutrient averages
         </button>
@@ -80,18 +91,36 @@
         <button class="bigButton" onclick="clearFoods()">Clear the list</button>
       </div>
       <div
-        class="blueB"
+        class="blueB rightPad"
         id="chart_1"
         style="width: 550px; height: 400px; margin: 0 auto"
       ></div>
       <div
+        class="rightPad"
         id="chart_2"
         style="width: 550px; height: 400px; margin: 0 auto"
       ></div>
-      <aside class="inline asideTop blueB">
-        <h2>Food Suggestion:</h2>
-      </aside>
     </section>
+
+    <table id="foodTable">
+      <colgroup class="blue"></colgroup>
+      <colgroup class="red"></colgroup>
+      <colgroup class="green"></colgroup>
+      <colgroup class="gold"></colgroup>
+      <colgroup class="silver"></colgroup>
+      <thead>
+        <tr>
+          <th>Name</th>
+            <th>Calories</th>
+             <th>Fat (g)</th>
+               <th>Carbs (g)</th>
+                 <th>Protein (g)</th>
+        </tr>
+      </thead>
+      <tbody>
+
+      </tbody>
+    </table>
 
     <footer>&COPY; Copyright 2020, Sermon Technologies</footer>
   </body>
