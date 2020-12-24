@@ -19,38 +19,31 @@ header {
   border-bottom: grey 2px solid;
 }
 
-.blueB {
-  background-color: #1a2238;
-}
-
-.title {
+footer {
   text-align: center;
+  height: 50px;
+  border-top: 3px solid grey;
+  background-image: linear-gradient(white, black);
+  position: relative;
+  bottom: 0;
+  width: 100%;
 }
 
 nav {
   margin-bottom: 0;
   padding-bottom: 0;
 }
-
-.navItem {
-  text-decoration: none;
+th {
   color: white;
-  margin: 0 10px;
-  text-align: left;
-  padding: 0;
-  font-size: 1.7em;
+  width: 100px;
 }
 
-.navItem:hover {
-  text-decoration: underline;
+button:hover {
+  border-color: white;
 }
 
-.invite {
-  color: gold;
-}
-
-.centerText {
-  text-align: center;
+button:focus {
+  border-color: white;
 }
 
 #appBoxOuter {
@@ -80,18 +73,54 @@ nav {
   display: inline-block;
 }
 
-.theChart {
-  border: #1a2238 3px solid;
-  width: 600px;
-  position: relative;
-  top: 10px;
-}
-
 #chart_1,
 #chart_2 {
   display: inline-block;
   left: 145px;
   bottom: 200px;
+}
+
+#foodTable > * {
+  color: white;
+  text-align: center;
+}
+
+#chartingTitle {
+  position: relative;
+  bottom: 15px;
+  margin-left: 15px;
+}
+
+.navItem {
+  text-decoration: none;
+  color: white;
+  margin: 0 10px;
+  text-align: left;
+  padding: 0;
+  font-size: 1.7em;
+}
+
+.navItem:hover {
+  text-decoration: underline;
+}
+
+.title {
+  text-align: center;
+}
+
+.invite {
+  color: gold;
+}
+
+.centerText {
+  text-align: center;
+}
+
+.theChart {
+  border: #1a2238 3px solid;
+  width: 600px;
+  position: relative;
+  top: 10px;
 }
 
 .bigButton {
@@ -106,16 +135,6 @@ nav {
 .asideTop {
   position: relative;
   bottom: 490px;
-}
-
-footer {
-  text-align: center;
-  height: 50px;
-  border-top: 3px solid grey;
-  background-image: linear-gradient(white, black);
-  position: relative;
-  bottom: 0;
-  width: 100%;
 }
 
 .rightPad {
@@ -145,13 +164,8 @@ footer {
 
   color: white;
 }
-#foodTable > * {
-  color: white;
-  text-align: center;
-}
-th {
-  color: white;
-  width: 100px;
+.blueB {
+  background-color: #1a2238;
 }
 
 .padded5 {
@@ -171,6 +185,7 @@ th {
   text-transform: uppercase;
   padding: 5px;
   height: 20px;
+  font-family: Helvetica, sans-serif;
 }
 
 .bar-icon {
@@ -186,12 +201,6 @@ th {
   display: inline;
 }
 
-#chartingTitle {
-  position: relative;
-  bottom: 15px;
-  margin-left: 15px;
-}
-
 .instructions {
-  font-family: Helvetica, sans-serif;
+  font-family: monospace;
 }
