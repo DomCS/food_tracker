@@ -56,6 +56,10 @@ button:focus {
   width: 100%;
 }
 
+#chartDesc {
+  width: 90%;
+}
+
 #foodSelector {
   padding: 20px;
 }
@@ -145,18 +149,22 @@ button:focus {
   background-color: silver;
   color: white;
 }
-.gold {
+.goldB {
   background-color: gold;
+  color: white;
+}
+.goldT {
+  color: gold;
+}
+.whiteT {
   color: white;
 }
 .green {
   background-color: green;
-  color: white;
 }
 
 .red {
   background-color: red;
-  color: white;
 }
 
 .blue {
@@ -165,7 +173,7 @@ button:focus {
   color: white;
 }
 .blueB {
-  background-color: #1a2238;
+  background-color: hsl(224, 37%, 16%);
 }
 
 .padded5 {
@@ -201,6 +209,98 @@ button:focus {
   display: inline;
 }
 
-.instructions {
+.super {
+  font-size: 0.6em;
+}
+
+.faded {
+  color: rgba(255, 215, 14, 0.2);
+}
+
+.faded:hover {
+  text-decoration: none;
+}
+.under:hover {
+  text-decoration: none;
+}
+
+.features {
+  list-style: none;
+  margin: 0 auto;
+  background-color: hsla(224, 37%, 16%, 1);
+}
+
+.features a:hover {
+  text-decoration: none;
+  font-size: 1.2em;
+}
+
+.features_1 {
+  list-style: none;
+  margin: 0 auto;
+  height: 20px;
+  background-color: hsla(224, 37%, 16%, 0.9);
+}
+
+.features h1 {
+  text-decoration: underline;
+  font-size: 1.2em;
+}
+.featureList {
+  width: 90%;
+  margin: 0 auto;
+}
+.featureList li {
+  display: inline-block;
+  padding-left: 15px;
+  width: 40%;
+  line-height: 1.6em;
+  font-size: 1.2em;
+  height: 300px;
+  overflow: scroll;
+}
+
+.borderOutset {
+  border: hsla(181, 100%, 20%, 0.94) outset 5px;
+  border-radius: 5px;
+}
+
+.charting {
+}
+
+.lineSp {
+  line-height: 1.8em;
+  font-size: 1.2em;
+}
+
+#signUpContainer {
+  display: block;
+}
+#signUpContainer main {
+  width: 50%;
+  margin: 0 auto;
+}
+
+#signUp label {
+  font-size: 18px;
+  margin: 5px;
+}
+#signUp input {
+  display: block;
+}
+#signUp button {
+  font-size: 1.2em;
+  margin-top: 10px;
   font-family: monospace;
+}
+
+.backgroundGraWhtGold {
+  width: max-content;
+  background: linear-gradient(35deg, rgba(255, 215, 0, 1) 0%, #ffffff 100%);
+  color: #1a2238;
+  border-radius: 20px;
+}
+
+#userName::-moz-focus-inner {
+  border: 5px blue solid;
 }
