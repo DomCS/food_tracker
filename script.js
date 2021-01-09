@@ -226,6 +226,17 @@ function getTotalPro() {
   console.log(totCal);
 }
 
+let getTotal = () => {
+  for (i = 0; i < enteredFoodsLib.length; i++) {
+    //console.log(foodsLib[i].calories);
+    totCal += enteredFoodsLib[i].calories;
+  }
+};
+
+let getAverage = (food, prop) => {
+  return;
+};
+
 //for each food item that has been eaten this function will return
 //the average amount of calories among them
 function avgCaloriesF() {

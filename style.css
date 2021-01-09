@@ -111,6 +111,9 @@ button:focus {
 .title {
   text-align: center;
 }
+header h1 {
+  padding-bottom: 10px;
+}
 
 .invite {
   color: gold;
